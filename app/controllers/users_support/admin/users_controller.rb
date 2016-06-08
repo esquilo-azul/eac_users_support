@@ -1,6 +1,8 @@
 module UsersSupport
   module Admin
     class UsersController < ::UsersSupport::ApplicationController
+      before_action :authenticate_user!
+
       active_scaffold UsersSupport::User do |conf|
         conf.columns.exclude :encrypted_password
       end
