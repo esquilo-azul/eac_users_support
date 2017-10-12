@@ -1,7 +1,8 @@
-module UsersSupport
-  class User < ActiveRecord::Base
-    self.table_name = 'users'
+# frozen_string_literal: true
+require_dependency 'eac_users_support'
 
+module EacUsersSupport
+  class User < ActiveRecord::Base
     devise :database_authenticatable, :registerable
 
     validates :email, presence: true, uniqueness: true

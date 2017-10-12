@@ -2,7 +2,7 @@ EacUsersSupport::Engine.routes.draw do
   namespace(:admin) do
     resources(:users) { as_routes }
   end
-  devise_for :users, class_name: 'UsersSupport::User', module: :devise, skip: [:registrations]
+  devise_for :users, class_name: 'EacUsersSupport::User', module: :devise, skip: [:registrations]
   resource :user, only: [:edit] do
     collection do
       patch 'update_password'
