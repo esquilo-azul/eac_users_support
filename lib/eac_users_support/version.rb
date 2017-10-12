@@ -1,3 +1,3 @@
-module UsersSupport
+module EacUsersSupport
   VERSION = '0.0.1'
 end

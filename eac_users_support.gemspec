@@ -2,12 +2,12 @@
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require 'users_support/version'
+require 'eac_users_support/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'eac_users_support'
-  s.version     = UsersSupport::VERSION
+  s.version     = ::EacUsersSupport::VERSION
   s.authors     = ['Esquilo Azul Company']
   s.summary     = 'Ready-to-use support for users registration, login, logout, etc, for Rails.'
   s.license     = 'MIT'
