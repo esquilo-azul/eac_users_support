@@ -1,4 +1,4 @@
-module UsersSupport
+module EacUsersSupport
   module Tasks
     class PasswordReset
       def initialize(email)

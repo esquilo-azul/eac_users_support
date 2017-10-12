@@ -3,5 +3,5 @@ require 'active_scaffold'
 require 'eac_users_support/engine'
 
 module EacUsersSupport
-  require_dependency 'users_support/tasks/password_reset'
+  require_dependency 'eac_users_support/tasks/password_reset'
 end
