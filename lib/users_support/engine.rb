@@ -2,7 +2,7 @@ require 'devise'
 
 module UsersSupport
   class Engine < ::Rails::Engine
-    isolate_namespace UsersSupport
+    isolate_namespace EacUsersSupport
 
     initializer :append_migrations do |app|
       unless app.root.to_s.match root.to_s
