@@ -1,3 +1,4 @@
+require 'active_scaffold'
 require 'users_support/engine'
 
 module UsersSupport
