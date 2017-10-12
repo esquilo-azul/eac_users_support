@@ -1,4 +1,4 @@
-UsersSupport::Engine.routes.draw do
+EacUsersSupport::Engine.routes.draw do
   namespace(:admin) do
     resources(:users) { as_routes }
   end

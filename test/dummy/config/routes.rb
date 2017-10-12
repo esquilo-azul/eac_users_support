@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount UsersSupport::Engine => '/users_support'
+  mount EacUsersSupport::Engine => '/eac_users_support'
 end
