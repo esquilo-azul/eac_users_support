@@ -1,5 +1,5 @@
 module EacUsersSupport
-  class UsersController < ApplicationController
+  class UsersController < ::EacUsersSupport::ApplicationController
     before_action :authenticate_user!
 
     def edit

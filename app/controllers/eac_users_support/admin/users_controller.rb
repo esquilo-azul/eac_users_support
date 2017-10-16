@@ -1,6 +1,6 @@
 module EacUsersSupport
   module Admin
-    class UsersController < ::UsersSupport::ApplicationController
+    class UsersController < ::EacUsersSupport::ApplicationController
       before_action :authenticate_user!
 
       active_scaffold ::EacUsersSupport::User do |conf|

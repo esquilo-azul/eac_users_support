@@ -1,4 +1,4 @@
-module UsersSupport
+module EacUsersSupport
   class ApplicationController < ::ApplicationController
   end
 end
