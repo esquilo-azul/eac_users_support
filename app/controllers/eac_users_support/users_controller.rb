@@ -1,4 +1,4 @@
-module UsersSupport
+module EacUsersSupport
   class UsersController < ApplicationController
     before_action :authenticate_user!
 
