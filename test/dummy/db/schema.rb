@@ -11,15 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012182305) do
+ActiveRecord::Schema.define(version: 20180222202443) do
 
   create_table "eac_users_support_users", force: :cascade do |t|
+    t.string   "email",               default: "", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.datetime "remember_created_at"
+  end
+
+  add_index "eac_users_support_users", ["email"], name: "index_eac_users_support_users_on_email", unique: true
+
+  create_table "users", force: :cascade do |t|
     t.string   "email",              default: "", null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "encrypted_password", default: "", null: false
   end
 
-  add_index "eac_users_support_users", ["email"], name: "index_eac_users_support_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
