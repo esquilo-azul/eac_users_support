@@ -3,6 +3,9 @@ module EacUsersSupport
     class UsersController < ::EacUsersSupport::ApplicationController
       active_scaffold ::EacUsersSupport::User do |conf|
         conf.columns.exclude :encrypted_password
+        %w[create update list].each do |action|
+          conf.send(action).columns.exclude :remember_created_at
+        end
       end
 
       protected
