@@ -1,5 +1,7 @@
 = UsersSupport
 
+{<img src="https://badge.fury.io/rb/eac_users_support.svg"
+alt="Gem Version" />}[https://badge.fury.io/rb/eac_users_support]
 {<img src="https://travis-ci.org/eduardobogoni/eac_users_support.svg?branch=master"
 alt="Build Status" />}[https://travis-ci.org/eduardobogoni/eac_users_support]
 
