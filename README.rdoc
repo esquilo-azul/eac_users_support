@@ -1,3 +1,6 @@
 = UsersSupport
 
+{<img src="https://travis-ci.org/eduardobogoni/eac_users_support.svg?branch=master"
+alt="Build Status" />}[https://travis-ci.org/eduardobogoni/eac_users_support]
+
 This project rocks and uses MIT-LICENSE.
