@@ -4,5 +4,9 @@
 alt="Gem Version" />}[https://badge.fury.io/rb/eac_users_support]
 {<img src="https://travis-ci.org/eduardobogoni/eac_users_support.svg?branch=master"
 alt="Build Status" />}[https://travis-ci.org/eduardobogoni/eac_users_support]
+{<img src="https://api.codeclimate.com/v1/badges/b1d55205806a6d7a907a/maintainability"
+/>}[https://codeclimate.com/github/eduardobogoni/eac_users_support/maintainability]
+{<img src="https://api.codeclimate.com/v1/badges/b1d55205806a6d7a907a/test_coverage"
+/>}[https://codeclimate.com/github/eduardobogoni/eac_users_support/test_coverage]
 
 This project rocks and uses MIT-LICENSE.
