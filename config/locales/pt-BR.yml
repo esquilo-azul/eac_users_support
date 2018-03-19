@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    attributes:
+      eac_users_support/user:
+        administrator: Administrador
+        email: E-mail
+        encrypted_password: Senha criptografada
+    models:
+      eac_users_support/user:
+        one: Usuário
+        other: Usuários
