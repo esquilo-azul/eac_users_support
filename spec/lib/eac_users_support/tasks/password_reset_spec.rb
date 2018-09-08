@@ -9,8 +9,8 @@ RSpec.describe ::EacUsersSupport::Tasks::PasswordReset do
         expect(::EacUsersSupport::User.find_by(email: user_email)).to be_nil
       end
 
-      context 'after first run' do
-        before(:each) { described_class.new(user_email).run }
+      context 'after first run with no administrator flag' do
+        before(:each) { described_class.new(user_email, false).run }
         let(:user) { ::EacUsersSupport::User.find_by(email: user_email) }
 
         it 'user should be exist' do
@@ -21,6 +21,10 @@ RSpec.describe ::EacUsersSupport::Tasks::PasswordReset do
           expect(user.valid_password?(user_email)).to be_truthy
         end
 
+        it 'user should not be administrator' do
+          expect(user.administrator).to be_falsey
+        end
+
         context 'password changed' do
           let(:new_password) { 'my_new_password' }
           before(:each) { user.update!(password: new_password) }
@@ -29,8 +33,8 @@ RSpec.describe ::EacUsersSupport::Tasks::PasswordReset do
             expect(user.valid_password?(user_email)).to be_falsey
           end
 
-          context 'after second run' do
-            before(:each) { described_class.new(user_email).run }
+          context 'after second run with administrator flag' do
+            before(:each) { described_class.new(user_email, true).run }
             let(:user2) { ::EacUsersSupport::User.find_by(email: user_email) }
 
             it 'user should be same as previous' do
@@ -39,6 +43,10 @@ RSpec.describe ::EacUsersSupport::Tasks::PasswordReset do
 
             it 'password should match email' do
               expect(user2.valid_password?(user_email)).to be_truthy
+            end
+
+            it 'user should be administrator' do
+              expect(user2.administrator).to be_truthy
             end
           end
         end

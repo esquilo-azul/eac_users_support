@@ -3,8 +3,9 @@
 module EacUsersSupport
   module Tasks
     class PasswordReset
-      def initialize(email)
+      def initialize(email, administrator)
         @email = email
+        @administrator = administrator
       end
 
       def run
@@ -22,7 +23,9 @@ module EacUsersSupport
       private
 
       def attributes_to_update
-        { password: @email, password_confirmation: @email }
+        r = { password: @email, password_confirmation: @email }
+        r[:administrator] = true if @administrator
+        r
       end
     end
   end
