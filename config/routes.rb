@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 EacUsersSupport::Engine.routes.draw do
   namespace(:admin) do
     resources(:users) { as_routes }

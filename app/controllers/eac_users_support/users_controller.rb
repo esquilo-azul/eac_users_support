@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EacUsersSupport
   class UsersController < ::EacUsersSupport::ApplicationController
     before_action :authenticate_user!
