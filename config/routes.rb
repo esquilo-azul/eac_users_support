@@ -2,7 +2,12 @@
 
 EacUsersSupport::Engine.routes.draw do
   namespace(:admin) do
-    resources(:users) { as_routes }
+    resources(:users) do
+      as_routes
+      member do
+        put :password_reset
+      end
+    end
   end
   devise_for :users, class_name: 'EacUsersSupport::User', module: :devise, skip: [:registrations]
   resource :user, only: [:edit] do

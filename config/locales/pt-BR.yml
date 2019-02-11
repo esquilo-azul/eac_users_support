@@ -9,3 +9,8 @@ pt-BR:
       eac_users_support/user:
         one: Usuário
         other: Usuários
+  eac_users_support:
+    password_reset:
+      action: Resetar senha
+      successful: Senha do usuário %{user} alterada para "%{password}".
+      failed: Falha ao tentar alterar a senha do usuário %{user}.
