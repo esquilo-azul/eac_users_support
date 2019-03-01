@@ -3,6 +3,12 @@
 module EacUsersSupport
   module Admin
     class UsersController < ::EacUsersSupport::ApplicationController
+      record_select per_page: 10,
+                    search_on: %i[email],
+                    order_by: 'email ASC',
+                    model: ::EacUsersSupport::User,
+                    full_text_search: true
+
       active_scaffold ::EacUsersSupport::User do |conf|
         conf.action_links.add :password_reset,
                               type: :member, method: :put, position: false,

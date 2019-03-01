@@ -4,6 +4,7 @@ EacUsersSupport::Engine.routes.draw do
   namespace(:admin) do
     resources(:users) do
       as_routes
+      record_select_routes
       member do
         put :password_reset
       end
