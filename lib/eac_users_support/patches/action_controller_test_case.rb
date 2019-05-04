@@ -2,7 +2,7 @@
 
 module ActionController
   class TestCase
-    include Devise::TestHelpers
+    include ::Devise::Test::ControllerHelpers
 
     setup do
       sign_in ::EacUsersSupport::User.find_or_create_by!(email: 'admin@example.com')
