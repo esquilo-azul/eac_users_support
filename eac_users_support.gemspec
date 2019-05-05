@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'recordselect', '~> 3.10'
 
   s.add_development_dependency 'rspec-rails', '~> 3.8' # Test
-  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'sqlite3', '~> 1.3.13'
 end
