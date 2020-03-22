@@ -27,6 +27,9 @@ module EacUsersSupport
 
       def attributes_to_update
         r = { password: @email, password_confirmation: @email }
+        if found_user.present? && found_user.confirmed_at.blank?
+          r.merge(confirmed_at: ::DateTime.now)
+        end
         r[:administrator] = true if @administrator
         r
       end

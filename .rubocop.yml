@@ -23,6 +23,10 @@ Metrics/MethodLength:
   Exclude:
     - '**/db/migrate/*'
 
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'db/migrate/*.rb'
+
 RSpec/NestedGroups:
   Exclude:
     - spec/lib/eac_users_support/tasks/password_reset_spec.rb
