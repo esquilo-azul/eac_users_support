@@ -10,11 +10,10 @@ EacUsersSupport::Engine.routes.draw do
       end
     end
   end
-  devise_for :users, class_name: 'EacUsersSupport::User', module: :devise, skip: [:registrations]
+  devise_for :users, class_name: 'EacUsersSupport::User', module: :devise
   resource :user, only: [:edit] do
     collection do
       patch 'update_password'
     end
   end
-  get '/users/sign_up(.:format)', to: 'devise/sessions#new', as: 'new_user_registration'
 end
