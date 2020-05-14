@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'devise'
+require 'devise_invitable'
 
 module EacUsersSupport
   class Engine < ::Rails::Engine
