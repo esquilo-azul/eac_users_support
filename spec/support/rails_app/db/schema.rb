@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200324203335) do
+ActiveRecord::Schema.define(version: 20200620215624) do
 
   create_table "eac_users_support_users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20200324203335) do
     t.datetime "confirmation_sent_at"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string   "unconfirmed_email"
   end
 
   add_index "eac_users_support_users", ["confirmation_token"], name: "index_eac_users_support_users_on_confirmation_token", unique: true
