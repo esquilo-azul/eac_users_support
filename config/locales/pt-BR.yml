@@ -3,8 +3,12 @@ pt-BR:
     attributes:
       eac_users_support/user:
         administrator: Administrador
+        current_password: Senha atual
         email: E-mail
         encrypted_password: Senha criptografada
+        password: Senha
+        password_confirmation: Confirmação de senha
+        remember_me: Permanecer logado
     models:
       eac_users_support/user:
         one: Usuário
