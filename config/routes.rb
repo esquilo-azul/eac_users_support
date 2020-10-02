@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 EacUsersSupport::Engine.routes.draw do
+  concern :active_scaffold, ActiveScaffold::Routing::Basic.new(association: true)
   namespace(:admin) do
-    resources(:users) do
-      as_routes
+    resources(:users, concerns: :active_scaffold) do
       record_select_routes
       member do
         put :password_reset
