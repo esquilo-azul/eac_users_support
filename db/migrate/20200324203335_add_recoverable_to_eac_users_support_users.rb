@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class AddRecoverableToEacUsersSupportUsers < ActiveRecord::Migration
+class AddRecoverableToEacUsersSupportUsers < (
+    Rails.version < '5' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+  )
   def change
     change_table :eac_users_support_users do |t|
       t.string   :reset_password_token
