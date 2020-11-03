@@ -14,9 +14,10 @@ module EacUsersSupport
                               type: :member, method: :put, position: false,
                               label: ::I18n.t(:'eac_users_support.password_reset.action')
         conf.columns.exclude :encrypted_password
-        %w[create update list].each do |action|
+        %w[create update].each do |action|
           conf.send(action).columns.exclude :remember_created_at
         end
+        conf.list.columns = %i[email administrator created_at confirmed_at]
       end
 
       def password_reset
