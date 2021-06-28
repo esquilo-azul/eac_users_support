@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '>= 4.2.11.3'
   s.add_dependency 'recordselect', '~> 3.10'
 
-  s.add_development_dependency 'eac_ruby_gem_support', '~> 0.1', '>= 0.1.2'
+  s.add_development_dependency 'eac_ruby_gem_support', '~> 0.2'
   s.add_development_dependency 'rspec-rails', '~> 3.8' # Test
   s.add_development_dependency 'sqlite3', '~> 1.3'
 end
