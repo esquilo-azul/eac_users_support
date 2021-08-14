@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '>= 4.2.11.3'
   s.add_dependency 'recordselect', '~> 3.10'
 
-  s.add_development_dependency 'eac_rails_gem_support', '~> 0.1'
+  s.add_development_dependency 'eac_rails_gem_support', '~> 0.1', '>= 0.1.1'
 end
