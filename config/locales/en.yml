@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    attributes:
+      eac_users_support/user:
+        administrator: Administrator
+        current_password: Current password
+        email: E-mail
+        encrypted_password: Encrypted password
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember me
+    models:
+      eac_users_support/user:
+        one: User
+        other: Users
+  eac_users_support:
+    password_reset:
+      action: Reset password
+      successful: User %{user}'s password updated to "%{password}".
+      failed: Faled to update user %{user}'s password.
