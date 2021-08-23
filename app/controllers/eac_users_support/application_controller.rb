@@ -2,7 +2,11 @@
 
 module EacUsersSupport
   class ApplicationController < (
-      defined?(::ApplicationController) ? ::ApplicationController : ::ActionController::Base
+      begin
+        ::ApplicationController
+      rescue NameError
+        ::ActionController::Base
+      end
     )
   end
 end
