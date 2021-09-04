@@ -2,6 +2,7 @@
 
 require 'devise'
 require 'devise_invitable'
+require 'eac_active_scaffold'
 
 module EacUsersSupport
   class Engine < ::Rails::Engine
