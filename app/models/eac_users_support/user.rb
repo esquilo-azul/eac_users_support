@@ -10,6 +10,10 @@ module EacUsersSupport
 
     validates :email, presence: true, uniqueness: true
 
+    def current?
+      self == self.class.current_user
+    end
+
     def to_s
       email
     end
