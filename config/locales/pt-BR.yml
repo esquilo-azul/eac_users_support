@@ -13,6 +13,12 @@ pt-BR:
       eac_users_support/user:
         one: Usuário
         other: Usuários
+  eac_rails_utils:
+    menus:
+      root:
+        admin:
+          eac_users_support:
+            __self: Usuários
   eac_users_support:
     password_reset:
       action: Resetar senha

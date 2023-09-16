@@ -13,6 +13,12 @@ en:
       eac_users_support/user:
         one: User
         other: Users
+  eac_rails_utils:
+    menus:
+      root:
+        admin:
+          eac_users_support:
+            __self: Users
   eac_users_support:
     password_reset:
       action: Reset password
