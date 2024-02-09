@@ -14,6 +14,6 @@ namespace :eac_users_support do
       bin/rake eac_users_support:password_reset[fulano@example.com,1]
   DESCRIPTION
   task :password_reset, %i[email administrator] => :environment do |_t, args|
-    ::EacUsersSupport::Tasks::PasswordReset.new(args.email, args.administrator.present?).run
+    EacUsersSupport::Tasks::PasswordReset.new(args.email, args.administrator.present?).run
   end
 end

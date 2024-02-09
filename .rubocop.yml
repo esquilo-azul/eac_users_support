@@ -1,15 +1,6 @@
 ---
 inherit_gem:
   eac_rails_gem_support: ".rubocop.yml"
-Style/RedundantConstantBase:
-  Exclude:
-  - Gemfile
-  - config/initializers/menus.rb
-  - eac_users_support.gemspec
-  - lib/tasks/eac_users_support.rake
-  - spec/lib/eac_users_support/tasks/password_reset_spec.rb
-  - spec/lib/rubocop_check_spec.rb
-  - spec/spec_helper.rb
 Style/StringConcatenation:
   Exclude:
   - app/controllers/eac_users_support/admin/users_controller.rb

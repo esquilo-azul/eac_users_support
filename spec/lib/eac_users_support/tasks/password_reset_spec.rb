@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-RSpec.describe ::EacUsersSupport::Tasks::PasswordReset do
+RSpec.describe EacUsersSupport::Tasks::PasswordReset do
   describe '#run' do
     let(:user_email) { 'fulano@example.com' }
 
     context 'when user not exist' do
       it 'no user should be found' do
-        expect(::EacUsersSupport::User.find_by(email: user_email)).to be_nil
+        expect(EacUsersSupport::User.find_by(email: user_email)).to be_nil
       end
 
       context 'after first run with no administrator flag' do # rubocop:disable RSpec/ContextWording
         before { described_class.new(user_email, false).run }
 
-        let(:user) { ::EacUsersSupport::User.find_by(email: user_email) }
+        let(:user) { EacUsersSupport::User.find_by(email: user_email) }
 
         it 'user should be exist' do
-          expect(user).to be_a(::EacUsersSupport::User)
+          expect(user).to be_a(EacUsersSupport::User)
         end
 
         it 'password should match email' do
@@ -38,7 +38,7 @@ RSpec.describe ::EacUsersSupport::Tasks::PasswordReset do
           context 'after second run with administrator flag' do # rubocop:disable RSpec/ContextWording
             before { described_class.new(user_email, true).run }
 
-            let(:user2) { ::EacUsersSupport::User.find_by(email: user_email) }
+            let(:user2) { EacUsersSupport::User.find_by(email: user_email) }
 
             it 'user should be same as previous' do
               expect(user2.id).to be(user.id)
