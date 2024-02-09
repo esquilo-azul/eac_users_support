@@ -3,7 +3,7 @@
 class AddDeviseInvitableToEacUsersSupportUsers < (
     Rails.version < '5' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
   )
-  def up
+  def up # rubocop:disable Metrics/MethodLength
     change_table :eac_users_support_users do |t|
       t.string     :invitation_token
       t.datetime   :invitation_created_at
