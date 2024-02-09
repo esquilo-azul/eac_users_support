@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'devise', '~> 4.9', '>= 4.9.2'
+  s.add_dependency 'devise', '~> 4.9', '>= 4.9.3'
   s.add_dependency 'devise_invitable', '~> 2.0', '>= 2.0.8'
   s.add_dependency 'eac_active_scaffold', '~> 0.5', '>= 0.5.1'
   s.add_dependency 'eac_rails_utils', '~> 0.22'
