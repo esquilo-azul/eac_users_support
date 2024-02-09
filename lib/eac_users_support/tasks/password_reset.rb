@@ -25,13 +25,28 @@ module EacUsersSupport
 
       private
 
+      # @return [Hash]
+      def administrator_attributes_to_update
+        @administrator ? { administrator: true } : {}
+      end
+
+      # @return [Hash]
       def attributes_to_update
-        r = { password: @email, password_confirmation: @email }
-        if found_user.present? && found_user.confirmed_at.blank?
-          r.merge(confirmed_at: ::DateTime.now)
+        %w[common confirmation administrator].inject({}) do |a, e|
+          a.merge(send("#{e}_attributes_to_update"))
         end
-        r[:administrator] = true if @administrator
-        r
+      end
+
+      # @return [Hash]
+      def common_attributes_to_update
+        { password: @email, password_confirmation: @email }
+      end
+
+      # @return [Hash]
+      def confirmation_attributes_to_update
+        return {} unless found_user.present? && found_user.confirmed_at.blank?
+
+        { confirmed_at: ::DateTime.now }
       end
 
       def found_user_uncached
