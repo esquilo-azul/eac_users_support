@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
-  s.test_files = Dir['test/**/*']
 
   s.add_dependency 'devise', '~> 4.9', '>= 4.9.3'
   s.add_dependency 'devise_invitable', '~> 2.0', '>= 2.0.9'
