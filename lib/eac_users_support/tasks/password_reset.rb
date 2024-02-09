@@ -14,8 +14,7 @@ module EacUsersSupport
 
       def run
         if found_user
-          Rails.logger.info "Usuário encontrado com o email \"#{@email}\""
-          found_user.update!(attributes_to_update)
+          run_on_user_found
         else
           Rails.logger.info "Usuário não encontrado com o email \"#{@email}\". Criando..."
           User.create!({ email: @email }.merge(attributes_to_update))
@@ -51,6 +50,12 @@ module EacUsersSupport
 
       def found_user_uncached
         ::EacUsersSupport::User.find_by(email: @email)
+      end
+
+      # @return [void]
+      def run_on_user_found
+        Rails.logger.info "Usuário encontrado com o email \"#{@email}\""
+        found_user.update!(attributes_to_update)
       end
     end
   end
