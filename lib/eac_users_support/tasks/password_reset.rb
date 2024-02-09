@@ -6,22 +6,18 @@ module EacUsersSupport
   module Tasks
     class PasswordReset
       enable_simple_cache
-
-      def initialize(email, administrator)
-        @email = email
-        @administrator = administrator
-      end
+      common_constructor :email, :administrator
 
       def run
         found_user ? run_on_user_found : run_on_user_not_found
-        Rails.logger.info "Senha resetada para #{@email}"
+        Rails.logger.info "Senha resetada para #{email}"
       end
 
       private
 
       # @return [Hash]
       def administrator_attributes_to_update
-        @administrator ? { administrator: true } : {}
+        administrator ? { administrator: true } : {}
       end
 
       # @return [Hash]
@@ -33,7 +29,7 @@ module EacUsersSupport
 
       # @return [Hash]
       def common_attributes_to_update
-        { password: @email, password_confirmation: @email }
+        { password: email, password_confirmation: email }
       end
 
       # @return [Hash]
@@ -44,19 +40,19 @@ module EacUsersSupport
       end
 
       def found_user_uncached
-        ::EacUsersSupport::User.find_by(email: @email)
+        ::EacUsersSupport::User.find_by(email: email)
       end
 
       # @return [void]
       def run_on_user_found
-        Rails.logger.info "Usuário encontrado com o email \"#{@email}\""
+        Rails.logger.info "Usuário encontrado com o email \"#{email}\""
         found_user.update!(attributes_to_update)
       end
 
       # @return [void]
       def run_on_user_not_found
-        Rails.logger.info "Usuário não encontrado com o email \"#{@email}\". Criando..."
-        User.create!({ email: @email }.merge(attributes_to_update))
+        Rails.logger.info "Usuário não encontrado com o email \"#{email}\". Criando..."
+        User.create!({ email: email }.merge(attributes_to_update))
       end
     end
   end
