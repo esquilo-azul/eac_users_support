@@ -13,12 +13,7 @@ module EacUsersSupport
       end
 
       def run
-        if found_user
-          run_on_user_found
-        else
-          Rails.logger.info "Usuário não encontrado com o email \"#{@email}\". Criando..."
-          User.create!({ email: @email }.merge(attributes_to_update))
-        end
+        found_user ? run_on_user_found : run_on_user_not_found
         Rails.logger.info "Senha resetada para #{@email}"
       end
 
@@ -56,6 +51,12 @@ module EacUsersSupport
       def run_on_user_found
         Rails.logger.info "Usuário encontrado com o email \"#{@email}\""
         found_user.update!(attributes_to_update)
+      end
+
+      # @return [void]
+      def run_on_user_not_found
+        Rails.logger.info "Usuário não encontrado com o email \"#{@email}\". Criando..."
+        User.create!({ email: @email }.merge(attributes_to_update))
       end
     end
   end
