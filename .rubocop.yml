@@ -1,9 +1,6 @@
 ---
 inherit_gem:
   eac_rails_gem_support: ".rubocop.yml"
-Layout/MultilineMethodCallIndentation:
-  Exclude:
-  - config/initializers/menus.rb
 Metrics/MethodLength:
   Exclude:
   - db/migrate/20200322051231_add_devise_invitable_to_eac_users_support_users.rb
