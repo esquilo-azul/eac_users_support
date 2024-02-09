@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'eac_ruby_utils/simple_cache'
+require 'eac_ruby_utils/core_ext'
 
 module EacUsersSupport
   module Tasks
     class PasswordReset
-      include ::EacRubyUtils::SimpleCache
+      enable_simple_cache
 
       def initialize(email, administrator)
         @email = email
