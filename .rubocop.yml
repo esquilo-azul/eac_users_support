@@ -1,9 +1,6 @@
 ---
 inherit_gem:
   eac_rails_gem_support: ".rubocop.yml"
-Gemspec/RequiredRubyVersion:
-  Exclude:
-  - eac_users_support.gemspec
 Layout/MultilineMethodCallIndentation:
   Exclude:
   - config/initializers/menus.rb
