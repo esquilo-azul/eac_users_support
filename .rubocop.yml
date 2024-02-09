@@ -1,48 +1,27 @@
-require:
-  - rubocop-rails
-  - rubocop-rspec
-
-AllCops:
-  TargetRailsVersion: 4.2
-  TargetRubyVersion: 2.4
+---
+inherit_gem:
+  eac_rails_gem_support: ".rubocop.yml"
+Gemspec/DeprecatedAttributeAssignment:
   Exclude:
-    - '**/*/db/schema.rb'
-
-Layout/LineLength:
-  Max: 100
-
-Metrics/AbcSize:
+  - eac_users_support.gemspec
+Gemspec/RequiredRubyVersion:
   Exclude:
-    - '**/db/migrate/*'
-
-Metrics/BlockLength:
+  - eac_users_support.gemspec
+Layout/MultilineMethodCallIndentation:
   Exclude:
-    - '**/*.gemspec'
-    - 'spec/**/*_spec.rb'
-
+  - config/initializers/menus.rb
 Metrics/MethodLength:
   Exclude:
-    - '**/db/migrate/*'
-
-Rails/SkipsModelValidations:
+  - db/migrate/20200322051231_add_devise_invitable_to_eac_users_support_users.rb
+Style/RedundantConstantBase:
   Exclude:
-    - 'db/migrate/*.rb'
-
-RSpec/NestedGroups:
+  - Gemfile
+  - config/initializers/menus.rb
+  - eac_users_support.gemspec
+  - lib/tasks/eac_users_support.rake
+  - spec/lib/eac_users_support/tasks/password_reset_spec.rb
+  - spec/lib/rubocop_check_spec.rb
+  - spec/spec_helper.rb
+Style/StringConcatenation:
   Exclude:
-    - spec/lib/eac_users_support/tasks/password_reset_spec.rb
-
-Style/Documentation:
-  Enabled: false
-
-Style/AsciiComments:
-  Enabled: false
-
-Style/HashEachMethods:
-  Enabled: false
-
-Style/HashTransformKeys:
-  Enabled: false
-
-Style/HashTransformValues:
-  Enabled: false
+  - app/controllers/eac_users_support/admin/users_controller.rb
