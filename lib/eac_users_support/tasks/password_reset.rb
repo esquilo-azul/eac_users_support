@@ -34,7 +34,7 @@ module EacUsersSupport
 
       # @return [Hash]
       def confirmation_attributes_to_update
-        return {} unless found_user.present? && found_user.confirmed_at.blank?
+        return {} unless found_user.blank? || found_user.confirmed_at.blank?
 
         { confirmed_at: ::DateTime.now }
       end
