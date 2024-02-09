@@ -28,7 +28,7 @@ module EacUsersSupport
             flash[:info] = ::I18n.t(:'eac_users_support.password_reset.successful',
                                     user: record, password: record.password)
           else
-            flash[:error] = ::I18n.t(:'eac_users_support.password_reset.failed', user: user) +
+            flash[:error] = ::I18n.t(:'eac_users_support.password_reset.failed', user: user) + # rubocop:disable Style/StringConcatenation
                             ': ' + record.errors.to_s
           end
         end
