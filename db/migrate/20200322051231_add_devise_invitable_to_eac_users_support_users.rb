@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class AddDeviseInvitableToEacUsersSupportUsers < (
-    Rails.version < '5' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
-  )
+  Rails.version < '5' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+)
   def up # rubocop:disable Metrics/MethodLength
     change_table :eac_users_support_users do |t|
       t.string     :invitation_token

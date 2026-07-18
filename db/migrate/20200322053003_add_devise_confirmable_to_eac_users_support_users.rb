@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class AddDeviseConfirmableToEacUsersSupportUsers < (
-    Rails.version < '5' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
-  )
+  Rails.version < '5' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+)
   class Model < ::ActiveRecord::Base
     self.table_name = :eac_users_support_users
   end
