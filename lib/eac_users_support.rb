@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'active_record'
+require 'rails'
 require 'recordselect'
 require 'eac_users_support/engine'
 
