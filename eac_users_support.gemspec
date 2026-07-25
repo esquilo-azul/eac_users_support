@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.required_ruby_version = '>= 3.2'
 
-  s.add_dependency 'devise', '~> 4.9', '>= 4.9.4'
+  s.add_dependency 'devise', '~> 5.0', '>= 5.0.4'
   s.add_dependency 'devise_invitable', '~> 2.0', '>= 2.0.12'
   s.add_dependency 'eac_active_scaffold', '~> 0.8', '>= 0.8.1'
   s.add_dependency 'eac_rails_utils', '~> 0.29', '>= 0.29.2'
