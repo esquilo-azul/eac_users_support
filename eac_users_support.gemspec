@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'devise', '~> 4.9', '>= 4.9.4'
   s.add_dependency 'devise_invitable', '~> 2.0', '>= 2.0.12'
   s.add_dependency 'eac_active_scaffold', '~> 0.8', '>= 0.8.1'
-  s.add_dependency 'eac_rails_utils', '~> 0.29', '>= 0.29.1'
-  s.add_dependency 'eac_ruby_utils', '~> 0.131', '>= 0.131.2'
+  s.add_dependency 'eac_rails_utils', '~> 0.29', '>= 0.29.2'
+  s.add_dependency 'eac_ruby_utils', '~> 0.131', '>= 0.131.3'
   s.add_dependency 'recordselect', '~> 3.10', '>= 3.10.9'
 
-  s.add_development_dependency 'eac_rails_gem_support', '~> 0.12', '>= 0.12.3'
+  s.add_development_dependency 'eac_rails_gem_support', '~> 0.13'
 end
